@@ -1,10 +1,10 @@
 let noiseVal;
-//let noiseScale = 0.02;
+let noiseScale = 0.02;
 //let size=2;
 //let texCanvas;
 let button;
 let img;
-var noise_slider;
+//var noise_slider;
 var scale_slider;
 let q;
 let w;
@@ -12,12 +12,13 @@ let e;
 let t;
 
 function preload() {
-  img = loadImage('images/xx.png');
-  img2 = loadImage('images/magnet.png');
+  img = loadImage('../images/xx.png');
+  img2 = loadImage('../images/magnet.png');
 }
 
 function setup() {
-  createCanvas(500, 500);
+  let canvas = createCanvas(500, 500);
+  canvas.parent("#sketch");
   textCanvas = createGraphics(200, 200);
   noStroke();
   
@@ -42,8 +43,8 @@ function loadVal(){
 function draw() {
   background(0);
   
-  var noiseScale = noise_slider.value();
-  var sizeScale = noise_slider.value();
+  //noiseScale = noise_slider.value();
+  sizeScale = scale_slider.value();
   
   for(let y = 0; y < height; y+=sizeScale) {
     for(let x = 0; x < width; x+=sizeScale) {
